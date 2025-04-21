@@ -8,13 +8,13 @@ const HomeHeroSection = () => (
           Your professionally trained virtual receptionist that handles calls 24/7, routes inquiries, and provides consistent customer service – always on, never a sick day.
         </p>
         <div className="price-tag bg-[#00B8D4] text-white px-5 py-1 rounded-full font-bold text-2xl mb-5 inline-block">
-          $299<span className="text-base ml-2">/month</span>
+          $0.47<span className="text-base ml-2">/hour</span>
         </div>
         <div className="hero-cta flex flex-wrap items-center gap-6">
           <a href="#" className="hero-btn bg-[#1A237E] text-white px-6 py-3 rounded font-bold transition hover:bg-[#141c64] text-lg">Start Your 14-Day Trial</a>
           <a href="#" className="hero-demo flex items-center text-[#1A237E] font-bold">
             <svg width={24} height={24} fill="none" stroke="#1A237E" strokeWidth={2} className="mr-2"><circle cx={12} cy={12} r={10} strokeWidth={2}/><path d="M16 12L10 16V8L16 12Z" fill="#1A237E"/></svg>
-            Watch Demo
+            Live Demo
           </a>
         </div>
       </div>
@@ -24,4 +24,5 @@ const HomeHeroSection = () => (
     </div>
   </section>
 );
+
 export default HomeHeroSection;

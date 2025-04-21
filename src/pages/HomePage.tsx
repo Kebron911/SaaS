@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -43,7 +42,7 @@ const HomePage = () => {
                 Your professionally trained virtual receptionist that handles calls 24/7, routes inquiries, and provides consistent customer service – always on, never a sick day.
               </p>
               <div className="price-tag bg-[#00B8D4] text-white px-5 py-1 rounded-full font-bold text-2xl mb-5 inline-block">
-                $299<span className="text-base ml-2">/month</span>
+                $0.47<span className="text-base ml-2">/hour</span>
               </div>
               <div className="hero-cta flex flex-wrap items-center gap-6">
                 <a href="#" className="hero-btn bg-[#1A237E] text-white px-6 py-3 rounded font-bold transition hover:bg-[#141c64] text-lg">Start Your 14-Day Trial</a>
@@ -52,7 +51,7 @@ const HomePage = () => {
                     <circle cx={12} cy={12} r={10} strokeWidth={2}/>
                     <path d="M16 12L10 16V8L16 12Z" fill="#1A237E"/>
                   </svg>
-                  Watch Demo
+                  Live Demo
                 </a>
               </div>
             </div>
@@ -321,7 +320,7 @@ const HomePage = () => {
             <p className="text-lg max-w-2xl mx-auto mb-8">Join thousands of businesses already saving time and money while providing better customer service. Try it risk-free with our 14-day money-back guarantee.</p>
             <div className="flex flex-wrap justify-center gap-5">
               <a href="#" className="bg-[#00B8D4] text-white px-6 py-3 rounded font-bold text-lg hover:bg-[#009cb8] transition">Start Your Free Trial</a>
-              <a href="#" className="border-2 border-white text-white px-6 py-3 rounded font-bold text-lg hover:bg-white hover:text-[#1A237E] transition">Schedule a Demo</a>
+              <a href="#" className="border-2 border-white text-white px-6 py-3 rounded font-bold text-lg hover:bg-white hover:text-[#1A237E] transition">Live Demo</a>
             </div>
           </div>
         </section>
