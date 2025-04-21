@@ -3,11 +3,16 @@ import React from "react";
 import { MessageSquare, Share, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const BlogPostContent = () => (
+interface BlogPostContentProps {
+  slug?: string;
+}
+
+const BlogPostContent = ({ slug }: BlogPostContentProps) => (
   <article className="blog-post">
     <div className="post-meta flex items-center mb-4 text-[#777] text-sm">
       <span className="category bg-[#FFF9C4] text-[#1A237E] font-semibold px-3 py-1 rounded mr-4">Case Study</span>
       <span>April 12, 2025</span>
+      {slug && <span className="ml-4 text-[#00B8D4]">Post ID: {slug}</span>}
     </div>
     
     <h1 className="text-3xl md:text-4xl font-bold text-[#1A237E] mb-6">
