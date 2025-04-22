@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Calculator as CalculatorIcon, Plus, Minus, Divide, Multiply } from "lucide-react";
+import { Calculator as CalculatorIcon, Plus, Minus, Divide, X } from "lucide-react";
 
 const Calculator = () => {
   const [num1, setNum1] = useState<number>(0);
@@ -94,7 +93,7 @@ const Calculator = () => {
                 operation === 'divide' ? 'bg-[#00B8D4] text-white' : 'bg-gray-100 hover:bg-gray-200 text-[#1A237E]'
               }`}
             >
-              <Divide className="w-4 h-4" />
+              <X className="w-4 h-4" />
               Divide
             </button>
           </div>
