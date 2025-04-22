@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Calculator from "@/components/Calculator";
 
 const HomePage = () => {
   return (
@@ -201,6 +202,9 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+
+        {/* Calculator Section */}
+        <Calculator />
 
         {/* Use Cases Section */}
         <section id="use-cases" className="use-cases bg-[#F5F5F5] py-24">
