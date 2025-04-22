@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeHeroSection from "@/components/HomeHeroSection";
@@ -15,10 +16,11 @@ const HomePage = () => {
         <div className="container max-w-[1200px] mx-auto px-5">
           <div className="flex justify-between items-center py-5 flex-col md:flex-row">
             <Link to="/" className="flex items-center font-bold text-[24px] text-[#1A237E] mb-3 md:mb-0">
-              <div className="w-[30px] h-[30px] bg-[#1A237E] rounded-full mr-3 relative">
-                <div className="absolute w-[15px] h-[12px] bg-white rounded-t-full top-2 left-[7px]" />
-              </div>
-              Professional AI Assistants
+              <img 
+                src="/lovable-uploads/332ae568-86d8-4c46-ac45-7a8c67c76215.png" 
+                alt="Professional AI Assistants" 
+                className="h-10 mr-3"
+              />
             </Link>
             <nav>
               <ul className="flex flex-wrap md:flex-nowrap gap-4 md:gap-8 text-base font-semibold">
@@ -31,8 +33,18 @@ const HomePage = () => {
               </ul>
             </nav>
             <div className="flex items-center mt-5 md:mt-0">
-              <button className="px-5 py-2 border-2 border-[#1A237E] text-[#1A237E] font-bold rounded mr-3 hover:bg-[#1A237E] hover:text-white transition">Log In</button>
-              <button className="bg-[#00B8D4] text-white px-6 py-3 rounded font-bold hover:bg-[#009cb8] transition">Get Started</button>
+              <Link 
+                to="/login" 
+                className="px-5 py-2 border-2 border-[#1A237E] text-[#1A237E] font-bold rounded mr-3 hover:bg-[#1A237E] hover:text-white transition"
+              >
+                Log In
+              </Link>
+              <Link 
+                to="/login" 
+                className="bg-[#00B8D4] text-white px-6 py-3 rounded font-bold hover:bg-[#009cb8] transition"
+              >
+                Get Started
+              </Link>
             </div>
           </div>
         </div>

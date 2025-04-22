@@ -23,10 +23,11 @@ const LoginPage = () => {
     <div className="min-h-screen bg-[#F5F5F5] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          {/* Logo would go here */}
-          <div className="w-16 h-16 bg-[#1A237E] rounded-full flex items-center justify-center">
-            <span className="text-white text-xl font-bold">AI</span>
-          </div>
+          <img
+            src="/lovable-uploads/332ae568-86d8-4c46-ac45-7a8c67c76215.png"
+            alt="Professional AI Assistants"
+            className="h-16"
+          />
         </div>
         <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
           Log in to your Account
