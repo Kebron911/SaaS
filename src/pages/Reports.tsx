@@ -7,7 +7,11 @@ import {
   Filter, 
   Plus,
   Search, 
-  Users 
+  Users,
+  ArrowUp,
+  ArrowDown,
+  TrendingUp,
+  TrendingDown
 } from "lucide-react";
 import DashboardLayout from "@/components/DashboardLayout";
 import { 
@@ -190,7 +194,7 @@ const Reports = () => {
                     <p className="text-xl font-semibold">1.8s</p>
                   </div>
                   <div className="flex items-center text-green-600">
-                    <ArrowUpRight className="h-4 w-4 mr-1" />
+                    <TrendingUp className="h-4 w-4 mr-1" />
                     <span className="text-xs font-medium">12% faster</span>
                   </div>
                 </div>
@@ -203,7 +207,7 @@ const Reports = () => {
                     <p className="text-xl font-semibold">94.2%</p>
                   </div>
                   <div className="flex items-center text-green-600">
-                    <ArrowUpRight className="h-4 w-4 mr-1" />
+                    <TrendingUp className="h-4 w-4 mr-1" />
                     <span className="text-xs font-medium">+3.5%</span>
                   </div>
                 </div>
@@ -216,7 +220,7 @@ const Reports = () => {
                     <p className="text-xl font-semibold">86.5%</p>
                   </div>
                   <div className="flex items-center text-red-600">
-                    <ArrowDownRight className="h-4 w-4 mr-1" />
+                    <TrendingDown className="h-4 w-4 mr-1" />
                     <span className="text-xs font-medium">-1.2%</span>
                   </div>
                 </div>
@@ -229,7 +233,7 @@ const Reports = () => {
                     <p className="text-xl font-semibold">4.8/5</p>
                   </div>
                   <div className="flex items-center text-green-600">
-                    <ArrowUpRight className="h-4 w-4 mr-1" />
+                    <TrendingUp className="h-4 w-4 mr-1" />
                     <span className="text-xs font-medium">+0.2</span>
                   </div>
                 </div>

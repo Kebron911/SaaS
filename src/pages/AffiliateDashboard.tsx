@@ -12,7 +12,8 @@ import {
   TrendingUp, 
   Twitter, 
   Users, 
-  Whatsapp
+  MessageSquare,
+  HelpCircle
 } from "lucide-react";
 import DashboardLayout from "@/components/DashboardLayout";
 import { 
@@ -132,7 +133,7 @@ const AffiliateDashboard = () => {
                   <p className="text-sm font-medium text-gray-700">Share your link via:</p>
                   <div className="flex flex-wrap gap-2">
                     <Button variant="outline" className="flex items-center gap-2">
-                      <Whatsapp className="h-4 w-4" /> WhatsApp
+                      <MessageSquare className="h-4 w-4" /> WhatsApp
                     </Button>
                     <Button variant="outline" className="flex items-center gap-2">
                       <Twitter className="h-4 w-4" /> Twitter
