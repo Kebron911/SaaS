@@ -1,28 +1,22 @@
 
 import React, { useState } from 'react';
-import { Calculator as CalculatorIcon, Plus, Minus, X, Divide } from "lucide-react";
+import { Calculator as CalculatorIcon } from "lucide-react";
 
 const Calculator = () => {
-  const [num1, setNum1] = useState<number>(0);
-  const [num2, setNum2] = useState<number>(0);
-  const [operation, setOperation] = useState<'add' | 'subtract' | 'multiply' | 'divide'>('add');
-  const [result, setResult] = useState<number | string>(0);
+  const [monthlyCallVolume, setMonthlyCallVolume] = useState(1000);
+  const [currentReceptionistCost, setCurrentReceptionistCost] = useState(3500);
+  const [aiReceptionistCost] = useState(499);
 
-  const calculateResult = () => {
-    switch (operation) {
-      case 'add':
-        setResult(num1 + num2);
-        break;
-      case 'subtract':
-        setResult(num1 - num2);
-        break;
-      case 'multiply':
-        setResult(num1 * num2);
-        break;
-      case 'divide':
-        setResult(num2 !== 0 ? num1 / num2 : "Cannot divide by zero");
-        break;
-    }
+  const calculateMonthlySavings = () => {
+    return currentReceptionistCost - aiReceptionistCost;
+  };
+
+  const calculateAnnualSavings = () => {
+    return calculateMonthlySavings() * 12;
+  };
+
+  const calculateROI = () => {
+    return ((calculateAnnualSavings() / (aiReceptionistCost * 12)) * 100).toFixed(0);
   };
 
   return (
@@ -31,7 +25,7 @@ const Calculator = () => {
         <div className="section-header text-center mb-12">
           <h2 className="text-3xl font-bold text-[#1A237E] mb-5 flex items-center justify-center gap-2">
             <CalculatorIcon className="w-8 h-8" />
-            Interactive Cost Calculator
+            Cost Savings Calculator
           </h2>
           <p className="text-gray-700 max-w-2xl mx-auto">
             Calculate your potential savings with our AI Phone Receptionist compared to traditional solutions.
@@ -39,76 +33,66 @@ const Calculator = () => {
         </div>
         
         <div className="calculator-container max-w-xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div>
-              <label className="block text-sm font-medium text-[#1A237E] mb-2">First Number</label>
-              <input
-                type="number"
-                value={num1}
-                onChange={(e) => setNum1(Number(e.target.value))}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B8D4]"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-[#1A237E] mb-2">Second Number</label>
-              <input
-                type="number"
-                value={num2}
-                onChange={(e) => setNum2(Number(e.target.value))}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B8D4]"
-              />
+          <div className="mb-8">
+            <label className="block text-sm font-medium text-[#1A237E] mb-2">
+              Monthly Call Volume
+            </label>
+            <input
+              type="range"
+              min="100"
+              max="5000"
+              step="100"
+              value={monthlyCallVolume}
+              onChange={(e) => setMonthlyCallVolume(Number(e.target.value))}
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#00B8D4]"
+            />
+            <div className="text-right text-sm text-gray-600 mt-1">
+              {monthlyCallVolume.toLocaleString()} calls/month
             </div>
           </div>
-          
-          <div className="operation-buttons grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <button
-              onClick={() => setOperation('add')}
-              className={`flex items-center justify-center gap-2 p-3 rounded-md transition-colors ${
-                operation === 'add' ? 'bg-[#00B8D4] text-white' : 'bg-gray-100 hover:bg-gray-200 text-[#1A237E]'
-              }`}
-            >
-              <Plus className="w-4 h-4" />
-              Add
-            </button>
-            <button
-              onClick={() => setOperation('subtract')}
-              className={`flex items-center justify-center gap-2 p-3 rounded-md transition-colors ${
-                operation === 'subtract' ? 'bg-[#00B8D4] text-white' : 'bg-gray-100 hover:bg-gray-200 text-[#1A237E]'
-              }`}
-            >
-              <Minus className="w-4 h-4" />
-              Subtract
-            </button>
-            <button
-              onClick={() => setOperation('multiply')}
-              className={`flex items-center justify-center gap-2 p-3 rounded-md transition-colors ${
-                operation === 'multiply' ? 'bg-[#00B8D4] text-white' : 'bg-gray-100 hover:bg-gray-200 text-[#1A237E]'
-              }`}
-            >
-              <X className="w-4 h-4" />
-              Multiply
-            </button>
-            <button
-              onClick={() => setOperation('divide')}
-              className={`flex items-center justify-center gap-2 p-3 rounded-md transition-colors ${
-                operation === 'divide' ? 'bg-[#00B8D4] text-white' : 'bg-gray-100 hover:bg-gray-200 text-[#1A237E]'
-              }`}
-            >
-              <Divide className="w-4 h-4" />
-              Divide
-            </button>
+
+          <div className="mb-8">
+            <label className="block text-sm font-medium text-[#1A237E] mb-2">
+              Current Monthly Receptionist Cost
+            </label>
+            <input
+              type="range"
+              min="2000"
+              max="10000"
+              step="100"
+              value={currentReceptionistCost}
+              onChange={(e) => setCurrentReceptionistCost(Number(e.target.value))}
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#00B8D4]"
+            />
+            <div className="text-right text-sm text-gray-600 mt-1">
+              ${currentReceptionistCost.toLocaleString()}/month
+            </div>
           </div>
-          
-          <button
-            onClick={calculateResult}
-            className="w-full bg-[#1A237E] text-white py-3 rounded-md hover:bg-[#141c64] transition-colors mb-6"
-          >
-            Calculate
-          </button>
-          
-          <div className="result text-center">
-            <div className="text-sm font-medium text-[#777] mb-2">Result</div>
-            <div className="text-2xl font-bold text-[#1A237E]">{result}</div>
+
+          <div className="results space-y-6">
+            <div className="result-item bg-gray-50 p-4 rounded-lg">
+              <div className="text-sm font-medium text-gray-600">Monthly AI Receptionist Cost</div>
+              <div className="text-2xl font-bold text-[#00B8D4]">${aiReceptionistCost}/month</div>
+            </div>
+
+            <div className="result-item bg-gray-50 p-4 rounded-lg">
+              <div className="text-sm font-medium text-gray-600">Your Monthly Savings</div>
+              <div className="text-2xl font-bold text-[#4CAF50]">
+                ${calculateMonthlySavings().toLocaleString()}/month
+              </div>
+            </div>
+
+            <div className="result-item bg-gray-50 p-4 rounded-lg">
+              <div className="text-sm font-medium text-gray-600">Your Annual Savings</div>
+              <div className="text-2xl font-bold text-[#4CAF50]">
+                ${calculateAnnualSavings().toLocaleString()}/year
+              </div>
+            </div>
+
+            <div className="result-item bg-gray-50 p-4 rounded-lg">
+              <div className="text-sm font-medium text-gray-600">Return on Investment</div>
+              <div className="text-2xl font-bold text-[#4CAF50]">{calculateROI()}%</div>
+            </div>
           </div>
         </div>
       </div>
