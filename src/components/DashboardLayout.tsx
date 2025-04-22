@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { 
@@ -7,6 +6,7 @@ import {
   LayoutHeader,
   LayoutSidebar 
 } from "@/components/ui/layout";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { 
   BarChart3, 
   Settings, 
@@ -67,11 +67,11 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Layout>
-        <LayoutSidebar className="fixed top-0 left-0 h-screen w-64 bg-white shadow-md z-40">
+        <LayoutSidebar className="fixed top-0 left-0 h-screen w-64 bg-card shadow-md z-40">
           <div className="py-6 px-4">
-            <Link to="/" className="flex items-center font-bold text-[20px] text-[#1A237E] mb-10">
+            <Link to="/" className="flex items-center font-bold text-[20px] text-foreground mb-10">
               <div className="w-[30px] h-[30px] bg-[#1A237E] rounded-full mr-3 relative">
                 <div className="absolute w-[15px] h-[12px] bg-white rounded-t-full top-2 left-[7px]" />
               </div>
@@ -85,8 +85,8 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                   to={item.path}
                   className={`flex items-center px-4 py-3 rounded-md text-sm font-medium transition-colors ${
                     location.pathname === item.path
-                    ? "bg-[#F5F5F5] text-[#1A237E]"
-                    : "text-gray-700 hover:bg-[#F5F5F5] hover:text-[#1A237E]"
+                    ? "bg-[#F5F5F5] text-foreground"
+                    : "text-gray-700 hover:bg-[#F5F5F5] hover:text-foreground"
                   }`}
                 >
                   <span className="mr-3">{item.icon}</span>
@@ -96,7 +96,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             </nav>
           </div>
           
-          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-border">
             <div className="flex items-center">
               <Avatar className="h-9 w-9">
                 <AvatarImage src="/placeholder.svg" />
@@ -114,12 +114,14 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         </LayoutSidebar>
         
         <div className="ml-64">
-          <LayoutHeader className="h-16 border-b border-gray-200 bg-white flex items-center justify-between px-6">
-            <h1 className="text-xl font-semibold text-gray-800">
+          <LayoutHeader className="h-16 border-b border-border bg-card flex items-center justify-between px-6">
+            <h1 className="text-xl font-semibold text-foreground">
               {menuItems.find(item => item.path === location.pathname)?.label || "Dashboard"}
             </h1>
             
             <div className="flex items-center space-x-4">
+              <ThemeToggle />
+              
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" className="relative">
