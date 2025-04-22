@@ -1,6 +1,5 @@
-
 import React from "react";
-import { MessageSquare, Share, Heart } from "lucide-react";
+import { MessageSquare, Share, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface BlogPostContentProps {
@@ -57,6 +56,31 @@ const BlogPostContent = ({ slug }: BlogPostContentProps) => (
         <li className="mb-2">Consistent response quality</li>
         <li>Real-time data analytics and reporting</li>
       </ul>
+    </div>
+
+    <div className="post-navigation my-12 pt-8 border-t border-gray-200">
+      <div className="flex justify-between items-center">
+        <Link 
+          to="/blog/integrate-ai-assistants" 
+          className="flex items-center gap-2 text-[#1A237E] hover:text-[#00B8D4] transition-colors"
+        >
+          <ChevronLeft className="w-5 h-5" />
+          <div className="flex flex-col">
+            <span className="text-sm text-[#777]">Previous Article</span>
+            <span className="font-semibold">5 Ways to Integrate AI Assistants</span>
+          </div>
+        </Link>
+        <Link 
+          to="/blog/new-integration" 
+          className="flex items-center gap-2 text-[#1A237E] hover:text-[#00B8D4] transition-colors"
+        >
+          <div className="flex flex-col items-end">
+            <span className="text-sm text-[#777]">Next Article</span>
+            <span className="font-semibold">New Slack Integration</span>
+          </div>
+          <ChevronRight className="w-5 h-5" />
+        </Link>
+      </div>
     </div>
 
     <div className="post-footer mt-12 pt-8 border-t border-gray-200">
