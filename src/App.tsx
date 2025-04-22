@@ -8,6 +8,11 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
+import Dashboard from "@/pages/Dashboard";
+import ReceptionistSetup from "@/pages/ReceptionistSetup";
+import Reports from "@/pages/Reports";
+import AccountSettings from "@/pages/AccountSettings";
+import HelpSupport from "@/pages/HelpSupport";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +26,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/setup" element={<ReceptionistSetup />} />
+          <Route path="/dashboard/reports" element={<Reports />} />
+          <Route path="/dashboard/settings" element={<AccountSettings />} />
+          <Route path="/dashboard/help" element={<HelpSupport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
