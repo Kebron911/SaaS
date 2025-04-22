@@ -14,7 +14,8 @@ import {
   MessageSquare, 
   HelpCircle, 
   Bell, 
-  LogOut 
+  LogOut,
+  Link as LinkIcon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -47,6 +48,11 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       icon: <BarChart3 className="w-5 h-5" />, 
       label: "Reports", 
       path: "/dashboard/reports" 
+    },
+    { 
+      icon: <LinkIcon className="w-5 h-5" />, 
+      label: "Affiliate Program", 
+      path: "/dashboard/affiliate" 
     },
     { 
       icon: <Settings className="w-5 h-5" />, 

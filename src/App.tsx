@@ -13,6 +13,7 @@ import ReceptionistSetup from "@/pages/ReceptionistSetup";
 import Reports from "@/pages/Reports";
 import AccountSettings from "@/pages/AccountSettings";
 import HelpSupport from "@/pages/HelpSupport";
+import AffiliateDashboard from "@/pages/AffiliateDashboard";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/dashboard/reports" element={<Reports />} />
           <Route path="/dashboard/settings" element={<AccountSettings />} />
           <Route path="/dashboard/help" element={<HelpSupport />} />
+          <Route path="/dashboard/affiliate" element={<AffiliateDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
