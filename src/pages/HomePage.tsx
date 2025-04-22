@@ -1,7 +1,5 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import Calculator from "@/components/Calculator";
 import HomeHeroSection from "@/components/HomeHeroSection";
 import HomeFeaturesSection from "@/components/HomeFeaturesSection";
 import HomeBenefitsSection from "@/components/HomeBenefitsSection";
@@ -45,7 +43,6 @@ const HomePage = () => {
         <HomeFeaturesSection />
         <HomeBenefitsSection />
         <HomeHowItWorksSection />
-        <Calculator />
         <HomeUseCasesSection />
         <HomeFAQSection />
 
